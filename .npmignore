@@ -26,3 +26,9 @@ CONTRIBUTING.md
 # Rollup
 .rollup.cache/
 rollup.config.js
+
+# Babel
+.babelrc
+
+# Jest
+jest.config.js
