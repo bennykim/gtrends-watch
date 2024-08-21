@@ -1,12 +1,12 @@
-import { formatDate, isLessThan7Days } from "../src/dateUtils";
 import {
   formatComparisonItems,
   formatResolution,
   parseResults,
   validateAndPrepareOptions,
 } from "../src/utils";
+import { formatDate, isLessThan7Days } from "../src/utils/dateUtils";
 
-jest.mock("../src/dateUtils", () => ({
+jest.mock("../src/utils/dateUtils", () => ({
   formatDate: jest.fn(),
   isLessThan7Days: jest.fn(),
 }));

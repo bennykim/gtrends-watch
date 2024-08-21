@@ -1,11 +1,11 @@
-import { API_BASE_URL, ENDPOINTS, WIDGET_IDS } from "./constants";
-import { getCookie } from "./cookie";
-import { makeHttpRequest } from "./httpClient";
+import { API_BASE_URL, ENDPOINTS, WIDGET_IDS } from "../constants";
 import {
   formatComparisonItems,
   parseResults,
   validateAndPrepareOptions,
-} from "./utils";
+} from "../utils";
+import { getCookie } from "./cookie";
+import { makeHttpRequest } from "./httpClient";
 
 export const createGoogleTrendsAPI = (options = {}) => {
   const {

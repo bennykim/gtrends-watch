@@ -1,7 +1,7 @@
+import fetchMock from "jest-fetch-mock";
+
 import { createGoogleTrendsAPI } from "../src/api";
 import { SEARCH_TYPE, WIDGET_IDS } from "../src/constants";
-
-import fetchMock from "jest-fetch-mock";
 
 describe("Google Trends API", () => {
   beforeEach(() => {

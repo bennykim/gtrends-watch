@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-import { API_BASE_URL } from "./constants";
+import { API_BASE_URL } from "../constants";
 
 export const getCookie = async () => {
   const options = {

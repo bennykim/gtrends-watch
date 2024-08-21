@@ -1,4 +1,4 @@
-import { formatDate, isLessThan7Days } from "../src/dateUtils";
+import { formatDate, isLessThan7Days } from "../src/utils/dateUtils";
 
 describe("isLessThan7Days", () => {
   test("returns true for dates less than 7 days apart", () => {

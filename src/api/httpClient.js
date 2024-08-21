@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-import { ResponseError, TooManyRequestsError } from "./errors";
+import { ResponseError, TooManyRequestsError } from "../utils/errors";
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 

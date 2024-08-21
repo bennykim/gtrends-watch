@@ -1,4 +1,4 @@
-import { SEARCH_TYPE } from "../src/constants";
+import { SEARCH_TYPE } from "../constants";
 import { formatDate, isLessThan7Days } from "./dateUtils";
 
 export const validateAndPrepareOptions = (options, searchType) => {

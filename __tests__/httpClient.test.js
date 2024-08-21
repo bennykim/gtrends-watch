@@ -1,6 +1,6 @@
-import { makeHttpRequest } from "../src/httpClient";
-
 import fetchMock from "jest-fetch-mock";
+
+import { makeHttpRequest } from "../src/api/httpClient";
 
 describe("Google Trends API", () => {
   beforeEach(() => {

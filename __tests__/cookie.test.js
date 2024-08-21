@@ -1,6 +1,6 @@
-import { getCookie } from "../src/cookie";
-
 import fetchMock from "jest-fetch-mock";
+
+import { getCookie } from "../src/api/cookie";
 
 describe("Google Trends API", () => {
   beforeEach(() => {
