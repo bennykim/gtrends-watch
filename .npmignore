@@ -1,0 +1,28 @@
+# Files
+node_modules/
+dist/
+src/
+
+# Tests
+__tests__/
+*.test.js
+
+# Config files
+.gitignore
+
+# Documentation
+CONTRIBUTING.md
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# Misc
+.DS_Store
+
+# Rollup
+.rollup.cache/
+rollup.config.js
