@@ -14,5 +14,5 @@ export default {
     },
   ],
   plugins: [resolve(), commonjs()],
-  external: ["https", "querystring"],
+  external: ["node-fetch"],
 };

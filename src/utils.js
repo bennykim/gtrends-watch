@@ -1,3 +1,4 @@
+import { SEARCH_TYPE } from "../src/constants";
 import { formatDate, isLessThan7Days } from "./dateUtils";
 
 export const validateAndPrepareOptions = (options, searchType) => {
@@ -13,7 +14,7 @@ export const validateAndPrepareOptions = (options, searchType) => {
 
   const mergedOptions = { ...defaultOptions, ...options };
 
-  if (searchType === "INTEREST_OVER_TIME") {
+  if (searchType === SEARCH_TYPE.INTEREST_OVER_TIME) {
     validateTimeOptions(mergedOptions);
   }
 
@@ -48,10 +49,23 @@ const validateTimeOptions = (options) => {
 
 export const parseResults = (results) => {
   try {
-    return JSON.parse(results.slice(4)).widgets;
-  } catch (error) {
-    error.requestBody = results;
-    throw error;
+    const cleanedResults = results.startsWith(")]}'")
+      ? results.substr(4)
+      : results;
+
+    const parsedResults = JSON.parse(cleanedResults);
+
+    if (parsedResults && parsedResults.widgets) {
+      return parsedResults.widgets;
+    } else if (Array.isArray(parsedResults)) {
+      return parsedResults;
+    } else {
+      return parsedResults;
+    }
+  } catch (e) {
+    console.error("Error parsing results:", e);
+    console.error("Raw results:", results);
+    throw new Error("Failed to parse API response");
   }
 };
 

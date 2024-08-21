@@ -1,21 +1,28 @@
-export class ResponseError extends Error {
-  constructor(message, response) {
-    super(message);
-    this.name = "ResponseError";
-    this.response = response;
-  }
+const createResponseError = (message, response) => {
+  const error = new Error(message);
+  error.name = "ResponseError";
+  error.response = response;
+  return error;
+};
 
-  static fromResponse(response) {
-    return new ResponseError(
-      `The request failed: Google returned a response with code ${response.statusCode}`,
-      response
-    );
-  }
-}
+const createTooManyRequestsError = (message, response) => {
+  const error = createResponseError(message, response);
+  error.name = "TooManyRequestsError";
+  return error;
+};
 
-export class TooManyRequestsError extends ResponseError {
-  constructor(message, response) {
-    super(message, response);
-    this.name = "TooManyRequestsError";
-  }
-}
+const fromResponse = (response) => {
+  return createResponseError(
+    `The request failed: Google returned a response with code ${response.status}`,
+    response
+  );
+};
+
+export const ResponseError = {
+  create: createResponseError,
+  fromResponse,
+};
+
+export const TooManyRequestsError = {
+  create: createTooManyRequestsError,
+};
