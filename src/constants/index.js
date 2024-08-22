@@ -1,14 +1,14 @@
-export const API_BASE_URL = "https://trends.google.com/trends";
+export const API_BASE_URL = "https://trends.google.com";
 
 export const ENDPOINTS = {
-  EXPLORE: "/api/explore",
-  INTEREST_OVER_TIME: "/api/widgetdata/multiline",
-  INTEREST_BY_REGION: "/api/widgetdata/comparedgeo",
-  RELATED_QUERIES: "/api/widgetdata/relatedsearches",
-  RELATED_TOPICS: "/api/widgetdata/relatedsearches",
-  SUGGESTIONS: "/api/autocomplete/",
-  TODAY_SEARCHES: "/api/dailytrends",
-  REALTIME_TRENDING_SEARCHES: "/api/realtimetrends",
+  EXPLORE: "/trends/api/explore",
+  INTEREST_OVER_TIME: "/trends/api/widgetdata/multiline",
+  INTEREST_BY_REGION: "/trends/api/widgetdata/comparedgeo",
+  RELATED_QUERIES: "/trends/api/widgetdata/relatedsearches",
+  RELATED_TOPICS: "/trends/api/widgetdata/relatedsearches",
+  SUGGESTIONS: "/trends/api/autocomplete/",
+  TODAY_SEARCHES: "/trends/api/dailytrends",
+  REALTIME_TRENDING_SEARCHES: "/trends/api/realtimetrends",
 };
 
 export const SEARCH_TYPE = {
